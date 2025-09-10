@@ -296,7 +296,7 @@ const HomePage = () => {
       if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return
       loadMoreInternships()
     }
-
+    
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [loadMoreInternships])
