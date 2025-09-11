@@ -6,14 +6,14 @@ import HomePage from './components/HomePage'
 import { Home, LayoutDashboard, Zap } from 'lucide-react'
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'landing' | 'home' | 'dashboard'>('landing')
+  const [currentPage, setCurrentPage] = useState('landing')
 
   return (
     <div className="min-h-screen">
       {/* Navigation Bar */}
-      <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="glass-effect rounded-full px-6 py-3 border border-primary/20">
-          <div className="flex items-center space-x-4">
+      <nav className="fixed right-4 top-1/2 transform -translate-x-1/2 z-50">
+        <div className="glass-effect rounded-[15px] px-6 py-3 border border-primary/20">
+          <div className="flex flex-col items-center space-y-4">
             <Button
               variant={currentPage === 'landing' ? 'default' : 'ghost'}
               size="sm"
@@ -46,7 +46,7 @@ export default function App() {
       </nav>
 
       {/* Page Content */}
-      <div className="pt-20">
+      <div className="pt-10">
         {currentPage === 'landing' && <LandingPage />}
         {currentPage === 'home' && <HomePage />}
         {currentPage === 'dashboard' && <Dashboard />}
