@@ -13,12 +13,12 @@ export default function LoginPage() {
       {/* Background with metallic curves */}
       <div className="absolute inset-0">
         <svg
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-screen h-screen "
           viewBox="0 0 800 600"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <defs>
+          <defs className="z-10">
             <linearGradient id="metallic1" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#6b7280" />
               <stop offset="50%" stopColor="#9ca3af" />
@@ -64,7 +64,7 @@ export default function LoginPage() {
 
       {/* Navigation Header */}
       <nav className="relative z-10 flex items-center justify-between p-6">
-        <div className="text-white text-2xl font-bold">Borcelle.</div>
+        <div className="text-[red] text-2xl font-bold">Internify</div>
         <div className="flex items-center space-x-8">
           <a href="#" className="text-white hover:text-gray-300 transition-colors">
             HOME
@@ -84,12 +84,13 @@ export default function LoginPage() {
       {/* Main Content */}
       <div className="relative z-10 flex items-center justify-between px-6 py-12">
         {/* Welcome Text */}
-        <div className="flex-1">
-          <h1 className="text-white text-6xl font-bold leading-tight">Welcome Back!</h1>
-        </div>
+  <h1 className="text-zinc-600 text-6xl font-bold leading-tight">
+  Welcome Back!
+</h1>
+
 
         {/* Login Card */}
-        <div className="bg-white rounded-3xl p-8 w-96 shadow-2xl">
+        <div className="border-[10px] border-zinc-700 bg-white rounded-3xl p-8 w-96 shadow-2xl">
           {/* Header with red dot */}
           <div className="flex items-center gap-2 mb-8">
             <h2 className="text-2xl font-semibold text-gray-900">Log in</h2>

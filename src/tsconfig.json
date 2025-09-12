@@ -34,6 +34,6 @@
     "styles",
     "App.tsx",
     "vite.config.ts"
-  ],
+, "SignUp.jsx"  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
