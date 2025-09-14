@@ -1,14 +1,19 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Button } from './ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { Badge } from './ui/badge'
 import { motion } from 'motion/react'
 import { ImageWithFallback } from './figma/ImageWithFallback'
+import { useNavigate } from 'react-router-dom';
 import {Brain,FileText,BarChart3,Target,Zap,Bell,Bookmark,GraduationCap,Activity,Upload,Search,TrendingUp,Users,Github,Twitter,Linkedin,Mail
 } from 'lucide-react'
+import { Switch } from './ui/switch'
+import { ThemeProviderContext } from "./ThemeProvider";
 
 const LandingPage = () => {
   const [activeStep, setActiveStep] = useState(0)
+  const navigate = useNavigate();
+  const { theme, setTheme } = useContext(ThemeProviderContext);
 
   const features = [
     {
@@ -83,7 +88,14 @@ const LandingPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-[#0f0f1a] to-[#1a1a2e]">
+    <div className="min-h-screen bg-gradient-to-br from-background via-[#0f0f1a] to-[#1a1a2e] relative">
+       <div className="absolute top-8 right-8 z-10 flex items-center space-x-2">
+        <span className="text-sm font-medium">{theme === 'dark' ? 'Dark Mode' : 'Light Mode'}</span>
+        <Switch
+            checked={theme === "dark"}
+            onCheckedChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+          />
+      </div>
       {/* Hero Section */}
       <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/5 to-secondary/10 animate-pulse-glow opacity-30"></div>
@@ -121,8 +133,9 @@ const LandingPage = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-2xl animate-pulse-glow"
+                onClick={() => navigate('/login')}
               >
-                Get Started / Sign Up
+                Get Started
               </Button>
             </motion.div>
           </motion.div>
@@ -265,7 +278,7 @@ const LandingPage = () => {
                 <li><a href="#" className="hover:text-primary transition-colors">About</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Careers</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Press</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
+                <li><a href="#" className-="hover:text-primary transition-colors">Blog</a></li>
               </ul>
             </div>
 

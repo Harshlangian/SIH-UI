@@ -2,44 +2,44 @@
 
 :root {
   --font-size: 14px;
-  /* Dark theme as default */
-  --background: #0a0a0f;
-  --foreground: #ffffff;
-  --card: #1a1a2e;
-  --card-foreground: #ffffff;
-  --popover: #1a1a2e;
-  --popover-foreground: #ffffff;
-  --primary: #1E90FF;
+  /* Light theme variables */
+  --background: #ffffff;
+  --foreground: #000000;
+  --card: #f8f9fa;
+  --card-foreground: #000000;
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  --primary: #007bff;
   --primary-foreground: #ffffff;
-  --secondary: #9B59B6;
+  --secondary: #6c757d;
   --secondary-foreground: #ffffff;
-  --muted: #16213e;
-  --muted-foreground: #a1a1aa;
-  --accent: #39FF14;
-  --accent-foreground: #000000;
-  --destructive: #ef4444;
+  --muted: #e9ecef;
+  --muted-foreground: #6c757d;
+  --accent: #17a2b8;
+  --accent-foreground: #ffffff;
+  --destructive: #dc3545;
   --destructive-foreground: #ffffff;
-  --border: rgba(255, 255, 255, 0.1);
-  --input: transparent;
-  --input-background: #16213e;
-  --switch-background: #374151;
+  --border: #dee2e6;
+  --input: #ced4da;
+  --input-background: #ffffff;
+  --switch-background: #ced4da;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #1E90FF;
-  --chart-1: #1E90FF;
-  --chart-2: #39FF14;
-  --chart-3: #9B59B6;
-  --chart-4: #f59e0b;
-  --chart-5: #ef4444;
+  --ring: #007bff;
+  --chart-1: #007bff;
+  --chart-2: #17a2b8;
+  --chart-3: #6f42c1;
+  --chart-4: #fd7e14;
+  --chart-5: #dc3545;
   --radius: 0.625rem;
-  --sidebar: #1a1a2e;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #1E90FF;
+  --sidebar: #f8f9fa;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #007bff;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #16213e;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #1E90FF;
+  --sidebar-accent: #e9ecef;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #dee2e6;
+  --sidebar-ring: #007bff;
 }
 
 .dark {
@@ -144,6 +144,14 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
+
+  .light .glass-effect {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
   
   .animate-float {
     animation: float 6s ease-in-out infinite;
@@ -199,18 +207,31 @@
   
   .feed-card:hover {
     transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .feed-card:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   }
   
   .shimmer {
     background: linear-gradient(
       90deg,
+      rgba(0, 0, 0, 0.1) 25%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.1) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .dark .shimmer {
+    background: linear-gradient(
+      90deg,
       rgba(255, 255, 255, 0.1) 25%,
       rgba(255, 255, 255, 0.2) 50%,
       rgba(255, 255, 255, 0.1) 75%
     );
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
   }
   
   @keyframes shimmer {
